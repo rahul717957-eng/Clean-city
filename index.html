@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean City - Swachh & Swasth Bharat</title>
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f4f9f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header & Navbar */
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            font-size: 2rem;
+            background: white;
+            color: #2e7d32;
+            padding: 8px 12px;
+            border-radius: 50%;
+        }
+        .logo-container h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #a5d6a7;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #e8f5e9;
+        }
+        .btn-primary {
+            background: #4caf50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn-primary:hover {
+            background: #388e3c;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: -30px auto 30px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Card Style */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        .card h3 {
+            color: #2e7d32;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: #4caf50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+        /* Telegram Action Buttons Box */
+        .telegram-box {
+            background: #e8f5e9;
+            border: 2px dashed #4caf50;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        .telegram-btn {
+            background: #0088cc;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .telegram-btn:hover {
+            background: #006699;
+        }
+
+        /* Motivation Section */
+        .motivation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        .motivate-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-top: 4px solid #4caf50;
+        }
+        .motivate-card i {
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin-bottom: 1rem;
+        }
+        .motivate-card h4 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .motivate-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Mobile Adjustments */
+        @media(max-width: 600px) {
+            header { padding: 1rem; }
+            .logo-container h1 { font-size: 1.2rem; }
+            nav { display: none; }
+            .hero h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h1>Clean City</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#complaint">Complaint</a>
+            <a href="#community">Community</a>
+        </nav>
+    </header>
+
+    <!-- Hero / Motivation Banner -->
+    <section class="hero" id="home">
+        <h2>Clean City, Green City, Healthy Life!</h2>
+        <p>Hamara shehar, hamari zimmedari. Kachra hatayein, swachhta apnayein aur ek behtar bhavishya ki shuruat karein.</p>
+        <a href="#complaint" class="btn-primary">Report Complaint Now</a>
+    </section>
+
+    <div class="container">
+
+        <!-- Motivation Grid -->
+        <div class="motivation">
+            <div class="motivate-card">
+                <i class="fa-solid fa-broom"></i>
+                <h4>Safai Abhiyan</h4>
+                <p>Har nagrik ka ek hi sapna, saaf-suthra ho shehar apna.</p>
+            </div>
+            <div class="motivate-card">
+                <i class="fa-solid fa-recycle"></i>
+                <h4>Recycle & Reuse</h4>
+                <p>Kachre ko sahi jagah pahunchayein, prakriti ko bachayein.</p>
+            </div>
+            <div class="motivate-card">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h4>Public Participation</h4>
+                <p>Aapki ek shikayat ya kadam badlaav la sakta hai.</p>
+            </div>
+        </div>
+
+        <!-- Complaint Registration Card -->
+        <div class="card" id="complaint">
+            <h3><i class="fa-solid fa-file-pen"></i> Register & Track Complaint</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Apne area ki kachre ya gandagi se judi samasya darj karein. Fast resolution ke liye humari <strong>Telegram Bot</strong> service ka upyog karein.</p>
+            
+            <form onsubmit="redirectToTelegram(event)">
+                <div class="form-group">
+                    <label for="name">Aapka Naam (Your Name)</label>
+                    <input type="text" id="name" placeholder="Apna pura naam likhein" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location / Area Address</label>
+                    <input type="text" id="location" placeholder="Gali number, landmark ya area ka naam" required>
+                </div>
+                <div class="form-group">
+                    <label for="issue">Samasya ka Vivaran (Issue Description)</label>
+                    <textarea id="issue" rows="4" placeholder="Kachra kahan jama hai ya kya samasya hai..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit via Telegram Bot</button>
+            </form>
+        </div>
+
+        <!-- Telegram Community & Bot Links Section -->
+        <div class="card telegram-box" id="community">
+            <h3><i class="fa-brands fa-telegram" style="color: #0088cc;"></i> Join Clean City Community</h3>
+            <p style="margin: 15px 0; color: #444;">Live updates, track complaints status aur apne shehar ke active members se judne ke liye hamare Telegram channels ko join karein.</p>
+            
+            <!-- Apna Telegram Bot username aur Group link yahan update karein -->
+            <a href="@OTPless https://t.me/TrueCalleRobot" target="_blank" class="telegram-btn">
+                <i class="fa-solid fa-robot"></i> Open Telegram Bot
+            </a>
+            <a href="https://t.me/infotechplus" target="_blank" class="telegram-btn" style="background: #2e7d32;">
+                <i class="fa-solid fa-users"></i> Join Community Group
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Clean City Initiative. Sabka Prayas, Safal Vikas.</p>
+    </footer>
+
+    <!-- JavaScript to handle dynamic form routing to Telegram -->
+    <script>
+        function redirectToTelegram(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('name').value;
+            let location = document.getElementById('location').value;
+            let issue = document.getElementById('issue').value;
+
+            let text = `📢 *New Clean City Complaint*%0A%0A*Name:* ${name}%0A*Location:* ${location}%0A*Issue:* ${issue}`;
+            
+            let botUrl = `https://t.me/YOUR_TELEGRAM_BOT_USERNAME?text=${encodeURIComponent(text)}`;
+            
+            window.open(botUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
